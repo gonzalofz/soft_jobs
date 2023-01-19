@@ -1,7 +1,7 @@
 const notesRoutes = require("./user");
 
 const middlewares = (app) => {
-  app.use("/api/v1", notesRoutes);
+  app.use("/api", notesRoutes);
 };
 
 module.exports = middlewares;

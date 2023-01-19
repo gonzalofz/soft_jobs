@@ -4,7 +4,7 @@ const createNote = (req, res) => {
   try {
     const { email, password, rol, lenguage } = req.body;
 
-    const querySql = `INSERT INTO POSTS(EMAIL, PASSWORD, ROL, LENGUAGE) VALUES ('${email}', '${password}', '${rol}', ${lenguage})`;
+    const querySql = `INSERT INTO usuarios(EMAIL, PASSWORD, ROL, LENGUAGE) VALUES ('${email}', '${password}', '${rol}', '${lenguage}')`;
     clientDB.query(querySql, function (err, result) {
       if (err) {
         console.log("[ERROR]:\n" + err);
