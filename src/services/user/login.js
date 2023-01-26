@@ -18,12 +18,13 @@ const login = (req, res) => {
       if (!result.rows.length) {
         res.status(404);
         res.send("no se ha encontrado el usuario");
+        return;
       }
 
       var token = jwt.sign({ user: email }, "123");
 
       res.status(200);
-      res.json({ token });
+      res.json(token);
 
       return;
     });
